@@ -1,11 +1,10 @@
 package me.dio.matches_simulador_app
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import me.dio.matches_simulador_app.databinding.ActivityMainBinding
 
-class MainActivity : AppCompatActivity() {
+class MainActivityKotlin : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -15,6 +14,6 @@ class MainActivity : AppCompatActivity() {
         //val tvHello : TextView = findViewById<TextView>(R.id.tvHello)
 
         binding = ActivityMainBinding.inflate(layoutInflater)
-        binding.tvHello.text = "Teste"
+        setContentView(binding.root)
     }
 }

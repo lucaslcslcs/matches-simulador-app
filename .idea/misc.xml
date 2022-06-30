@@ -4,7 +4,8 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/workspace/matches-simulador-app/app/src/main/res/drawable/ic_simulate.xml" value="0.1" />
-        <entry key="..\:/workspace/matches-simulador-app/app/src/main/res/layout/activity_main.xml" value="0.1276595744680851" />
+        <entry key="..\:/workspace/matches-simulador-app/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/workspace/matches-simulador-app/app/src/main/res/layout/match_item.xml" value="0.1829787234042553" />
       </map>
     </option>
   </component>

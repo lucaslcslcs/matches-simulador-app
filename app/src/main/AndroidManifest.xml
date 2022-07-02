@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="me.dio.matches_simulador_app">
 
+    <uses-permission android:name="android.permission.Internet"/>
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"

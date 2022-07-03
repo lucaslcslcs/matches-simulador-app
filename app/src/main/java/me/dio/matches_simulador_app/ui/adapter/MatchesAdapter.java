@@ -23,6 +23,7 @@ public class MatchesAdapter extends RecyclerView.Adapter<MatchesAdapter.ViewHold
     public MatchesAdapter(List<Match> matches) {
         this.matches = matches;
     }
+
     public List<Match> getMatches() {
         return matches;
     }
@@ -40,16 +41,15 @@ public class MatchesAdapter extends RecyclerView.Adapter<MatchesAdapter.ViewHold
         Context context = holder.itemView.getContext();
         Match match = matches.get(position);
 
-        // Adaptar os dados da partida (recuperada da API) para o nosso Layout.
+        // Adapta os dados da partida (recuperada da API) para o nosso layout.
         Glide.with(context).load(match.getHomeTeam().getImage()).circleCrop().into(holder.binding.ivHomeTeam);
         holder.binding.tvHomeTeamName.setText(match.getHomeTeam().getName());
-        if (match.getHomeTeam().getScore() != null){
+        if (match.getHomeTeam().getScore() != null) {
             holder.binding.tvHomeTeamScore.setText(String.valueOf(match.getHomeTeam().getScore()));
         }
-
         Glide.with(context).load(match.getAwayTeam().getImage()).circleCrop().into(holder.binding.ivAwayTeam);
         holder.binding.tvAwayTeamName.setText(match.getAwayTeam().getName());
-        if (match.getAwayTeam().getScore() != null){
+        if (match.getAwayTeam().getScore() != null) {
             holder.binding.tvAwayTeamScore.setText(String.valueOf(match.getAwayTeam().getScore()));
         }
 
@@ -69,7 +69,7 @@ public class MatchesAdapter extends RecyclerView.Adapter<MatchesAdapter.ViewHold
 
         private final MatchItemBinding binding;
 
-        public ViewHolder(MatchItemBinding binding){
+        public ViewHolder(MatchItemBinding binding) {
             super(binding.getRoot());
             this.binding = binding;
         }

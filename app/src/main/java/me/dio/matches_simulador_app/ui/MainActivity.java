@@ -27,21 +27,21 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity {
 
-    private final ActivityMainBinding binding = ActivityMainBinding.inflate(getLayoutInflater());
-    private MatchesAPI matchesAPI;
+    private ActivityMainBinding binding;
+    private MatchesAPI matchesApi;
     private MatchesAdapter matchesAdapter;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         setupHttpClient();
         setupMatchesList();
         setupMatchesRefresh();
         setupFloatingActionButton();
-
     }
 
     private void setupHttpClient() {
@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
-        matchesAPI = retrofit.create(MatchesAPI.class);
+        matchesApi = retrofit.create(MatchesAPI.class);
     }
 
     private void setupMatchesList() {
@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void findMatchesFromApi() {
         binding.srlMatches.setRefreshing(true);
-        matchesAPI.getMatches().enqueue(new Callback<List<Match>>() {
+        matchesApi.getMatches().enqueue(new Callback<List<Match>>() {
             @Override
             public void onResponse(@NonNull Call<List<Match>> call, @NonNull Response<List<Match>> response) {
                 if (response.isSuccessful()) {

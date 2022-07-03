@@ -4,7 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import me.dio.matches_simulador_app.databinding.ActivityMainBinding
 
-class MainActivityKotlin : AppCompatActivity() {
+class TestMainActivityKotlin : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {

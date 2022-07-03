@@ -1,37 +1,51 @@
 package me.dio.matches_simulador_app.ui.adapter;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.bumptech.glide.Glide;
+
 import java.util.List;
+
 import me.dio.matches_simulador_app.databinding.MatchItemBinding;
 import me.dio.matches_simulador_app.domain.Match;
+import me.dio.matches_simulador_app.ui.DetailActivity;
 
-public class MatchesAdapter extends RecyclerView.Adapter<MatchesAdapter.ViewHolder>  {
+public class MatchesAdapter extends RecyclerView.Adapter<MatchesAdapter.ViewHolder> {
 
     private List<Match> matches;
-    private LayoutInflater layoutInflater;
 
     public MatchesAdapter(List<Match> matches) {
         this.matches = matches;
+    }
+    public List<Match> getMatches() {
+        return matches;
     }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        LayoutInflater from = LayoutInflater.from(parent.getContext());
+        LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
         MatchItemBinding binding = MatchItemBinding.inflate(layoutInflater, parent, false);
         return new ViewHolder(binding);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        Context context = holder.itemView.getContext();
         Match match = matches.get(position);
 
         // Adaptar os dados da partida (recuperada da API) para o nosso Layout.
+        Glide.with(context).load(match.getHomeTeam().getImage()).circleCrop().into(holder.binding.ivHomeTeam);
         holder.binding.tvHomeTeamName.setText(match.getHomeTeam().getName());
+
+        Glide.with(context).load(match.getHomeTeam().getImage()).circleCrop().into(holder.binding.ivAwayTeam);
         holder.binding.tvAwayTeamName.setText(match.getHomeTeam().getName());
+
     }
 
     @Override

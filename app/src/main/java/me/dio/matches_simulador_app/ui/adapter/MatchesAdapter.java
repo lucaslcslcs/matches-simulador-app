@@ -1,6 +1,7 @@
 package me.dio.matches_simulador_app.ui.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
@@ -43,7 +44,7 @@ public class MatchesAdapter extends RecyclerView.Adapter<MatchesAdapter.ViewHold
         Glide.with(context).load(match.getHomeTeam().getImage()).circleCrop().into(holder.binding.ivHomeTeam);
         holder.binding.tvHomeTeamName.setText(match.getHomeTeam().getName());
         if (match.getHomeTeam().getScore() != null){
-        holder.binding.tvHomeTeamScore.setText(String.valueOf(match.getHomeTeam().getScore()));
+            holder.binding.tvHomeTeamScore.setText(String.valueOf(match.getHomeTeam().getScore()));
         }
 
         Glide.with(context).load(match.getAwayTeam().getImage()).circleCrop().into(holder.binding.ivAwayTeam);
@@ -51,6 +52,12 @@ public class MatchesAdapter extends RecyclerView.Adapter<MatchesAdapter.ViewHold
         if (match.getAwayTeam().getScore() != null){
             holder.binding.tvAwayTeamScore.setText(String.valueOf(match.getAwayTeam().getScore()));
         }
+
+        holder.itemView.setOnClickListener(view -> {
+            Intent intent = new Intent(context, DetailActivity.class);
+            intent.putExtra(DetailActivity.Extras.MATCH, match);
+            context.startActivity(intent);
+        });
     }
 
     @Override

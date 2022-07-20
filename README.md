@@ -1,5 +1,7 @@
-# Matches Simulador App
 # BootCamp Santander Mobile DIO
+
+# Matches Simulador App
+
 App Android Nativo de Simulação de Partidas. Este repositorio foi organizado em algumas branches que representam as implementações realizadas durante o BootCamp Santander Mobile.
 1. Desenvolvimento Mobile Nativo para Android
   - [release/desenvolvimento-mobile-nativo-para-android](https://github.com/lucaslcslcs1998/matches-simulador-app/tree/release/desenvolvimento-mobile-nativo-para-android)

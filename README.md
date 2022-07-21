@@ -12,9 +12,9 @@ App Android Nativo de Simulação de Partidas. Este repositorio foi organizado e
 4. Explorando o Firebase Para Apps Android Resilientes
   - [release/explorando-o-firebase-para-apps-android-resilientes](https://github.com/lucaslcslcs1998/matches-simulador-app/tree/release/explorando-o-firebase-para-apps-android-resilientes)
 
-#### Linguagem Usada
+#### Linguagem 
 
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=lucaslcslcs1998&layout=compact&hide=c&theme=github_dark)](https://github.com/anuraghazra/github-readme-stats)
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=lucaslcslcs1998&layout=compact&hide=c&theme=github_dark)](https://github.com/lucaslcslcs1998/)
 
 #### Rede Social
 
